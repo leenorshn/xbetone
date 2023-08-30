@@ -1,5 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:xbetone/home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -9,10 +9,12 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 24,
           ),
-          width: double.infinity,
+          // color: Colors.blue,
+          width: MediaQuery.of(context).size.width,
+          //width: double.infinity,
           child: Column(
             children: [
               const SizedBox(
@@ -28,24 +30,27 @@ class WelcomeScreen extends StatelessWidget {
                 height: 32,
               ),
               const Text.rich(
-                TextSpan(
-                  text: "X",
-                  style: TextStyle(
-                    color: Color.fromRGBO(255, 87, 34, 1),
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
+                TextSpan(children: [
+                  TextSpan(
+                    text: "X",
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 87, 34, 1),
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  children: [
-                    TextSpan(
-                      text: "Bet",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                ),
+                  TextSpan(
+                    text: "Bet",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ]),
+              ),
+              const Spacer(
+                flex: 3,
               ),
               Text(
                 "Gagner encore plus",
@@ -55,26 +60,33 @@ class WelcomeScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Spacer(),
+              const Spacer(
+                flex: 2,
+              ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: Color.fromARGB(255, 255, 255, 255),
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    minimumSize: Size.fromHeight(40),
-                    padding: EdgeInsets.symmetric(vertical: 16)),
+                  foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                  backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  minimumSize: const Size.fromHeight(40),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                ),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
-                    ),
-                  );
+                  Navigator.pushNamed(context, "home_screen");
                 },
-                child: const Text(
-                  "Commencer",
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(CupertinoIcons.airplane),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Commencer",
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(
