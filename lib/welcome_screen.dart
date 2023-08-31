@@ -74,7 +74,7 @@ class WelcomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 16),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(context, "home_screen");
+                  Navigator.pushNamed(context, "sign_up");
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

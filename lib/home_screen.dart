@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:xbetone/apis/auth_api.dart';
 import 'package:xbetone/apis/db.dart';
 import 'package:xbetone/models/competition.dart';
+import 'package:xbetone/welcome_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -27,12 +29,15 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: myAppBar(),
       body: Column(
         children: [
-          const DefaultTabController(
+          DefaultTabController(
             length: 5,
             initialIndex: 1,
             child: TabBar(
               isScrollable: true,
-              tabs: [
+              onTap: (i) {
+                setState(() {});
+              },
+              tabs: const [
                 Tab(
                   text: "Tout",
                 ),
@@ -112,9 +117,17 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: const Icon(CupertinoIcons.search),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () async {
+            await AuthApi().deconnect().then((value) {
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const WelcomeScreen()),
+                  (route) => false);
+            });
+          },
           icon: const Icon(
-            CupertinoIcons.bell,
+            CupertinoIcons.person,
           ),
         ),
       ],

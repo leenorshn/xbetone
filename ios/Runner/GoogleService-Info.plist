@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>179958289649-moinn4ltpogr423nt8p6up8fn6t00l7c.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.179958289649-moinn4ltpogr423nt8p6up8fn6t00l7c</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA4gffylB81flA_ssfO3JUeAjGAdHTCrdI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>179958289649</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.orio.xbetone</string>
+	<key>PROJECT_ID</key>
+	<string>xbetone-5244b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>xbetone-5244b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:179958289649:ios:d36de276f770b858db4550</string>
+</dict>
+</plist>
